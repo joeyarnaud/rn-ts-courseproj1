@@ -21,6 +21,9 @@ interface Props {
 
 const ResultsList: React.FC<Props> = (props) => {
   const { title, results, navigation } = props;
+  if (!results.length) {
+    return null;
+  }
   return (
     <View style={styles.container}>
       <Text style={styles.title}> {title} </Text>
